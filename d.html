@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doughnut Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 50%; margin: auto;">
+        <canvas id="doughnutChart"></canvas>
+    </div>
+    <script>
+        // Get the context of the canvas element
+        const ctx = document.getElementById('doughnutChart').getContext('2d');
+
+        // Create a doughnut chart
+        const doughnutChart = new Chart(ctx, {
+            type: 'doughnut', // Chart type
+            data: {
+                labels: ['Red'], // Chart labels
+                datasets: [{
+                    label: 'Votes',
+                    data: [5,50], // Data values
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                       
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top', // Position of the legend
+                    },
+                    tooltip: {
+                        enabled: true // Enable tooltips
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
